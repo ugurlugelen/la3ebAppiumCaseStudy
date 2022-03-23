@@ -38,7 +38,6 @@ public abstract class BaseTest {
         extentReports.setSystemInfo("QA Tester", "Adem Ugurlugelen");
         extentReports.setSystemInfo("Environmet","PRODUCTION");
         extentReports.setSystemInfo("Android","10.0");
-
     }
 
     @AfterTest(alwaysRun = true)
@@ -55,7 +54,6 @@ public abstract class BaseTest {
 
     @AfterMethod(alwaysRun = true)
     public void tearDownMethod(ITestResult result) throws IOException {
-
         if (result.getStatus() == ITestResult.FAILURE) {
             extentTest.fail(result.getName());
             String screenshot = ReusableMethods.getScreenshot(result.getName());
